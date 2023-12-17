@@ -8,7 +8,6 @@ $letters = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nin
 $characters = ['o', 't', 't', 'f', 'f', 's', 's', 'e', 'n'];
 $sum = 0;
 $final_num = [];
-$count = 0;
 foreach ($contents as $content) {
     $num = [];
     for ($i = 0; $i < strlen($content); $i++) {
@@ -25,12 +24,8 @@ foreach ($contents as $content) {
     $final_num[] = $num[0] . end($num);
 }
 
-$fp = fopen(__DIR__ . '/ans.txt', 'a');
-
 foreach ($final_num as $num) {
-    fwrite($fp, $num . "\n");
     $sum += $num;
 }
-fclose($fp);
 
 echo $sum;
